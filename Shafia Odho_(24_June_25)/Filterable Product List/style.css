@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0d1117; /* blackish background */
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #1f6feb;
+    border-radius: 10px;
+    background-color: #161b22; /* dark blue */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #58a6ff;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #0d1117;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #1f6feb;
+    box-shadow: 0 0 5px #1f6feb;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    padding: 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #21262d;
+    transition: all 0.3s ease;
+}
+
+.product-list li:hover {
+    background-color: #1f6feb;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    #searchInput,
+    .product-list li {
+        font-size: 14px;
+    }
+}
