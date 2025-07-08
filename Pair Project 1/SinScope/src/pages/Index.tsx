@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import GenreFilter from '../components/GenreFilter';
 import MovieGrid from '../components/MovieGrid';
-import { fetchTMDBPopularMovies } from '../data/api';
+import { movies } from '../data/movies';
 
 const Index = () => {
   const [selectedGenre, setSelectedGenre] = useState('Action');
-  const [movies, setMovies] = useState<any[]>([]);
-
-  useEffect(() => {
-    const loadMovies = async () => {
-      const data = await fetchTMDBPopularMovies();
-      setMovies(data);
-    };
-
-    loadMovies();
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-slate-900">
       <Header />
-
+      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <GenreFilter 
           selectedGenre={selectedGenre} 
@@ -32,7 +22,7 @@ const Index = () => {
           selectedGenre={selectedGenre} 
         />
       </main>
-
+      
       {/* Background Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
